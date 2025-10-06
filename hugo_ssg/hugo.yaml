@@ -1,0 +1,63 @@
+baseURL: "https://fundedyouth.org/api/docs"
+
+# Code highlighting settings
+pygmentsCodefences: true
+pygmentsCodeFencesGuessSyntax: false
+pygmentsOptions: ""
+pygmentsStyle: "monokai"
+pygmentsUseClasses: false
+
+defaultContentLanguage: "en"
+disableKinds: ["taxonomy"]
+
+markup:
+  goldmark:
+    parser:
+      autoHeadingIDType: "github-ascii"
+    renderer:
+      unsafe: true
+
+module:
+  hugoVersion:
+    min: "0.116.0"
+  imports:
+    - path: "github.com/gohugoio/hugo-mod-jslibs-dist/alpinejs/v3"
+    - path: "github.com/olivernn/lunr.js"
+      mounts:
+        - source: "lunr.js"
+          target: "assets/js/lib/lunr.js"
+    - path: "github.com/slatedocs/slate"
+      mounts:
+        - source: "source/images"
+          target: "static/images"
+        - source: "source/fonts"
+          target: "static/fonts"
+        - source: "source/stylesheets"
+          target: "assets/scss/slate"
+
+params:
+  search: true
+  maxMenuDepth: 3    # (optional) available options are: 1, 2, or 3 (default: 2)
+
+  # Configure the language example tabs.
+  language_tabs:
+    - key: "shell"
+      name: "cURL"
+    - key: "php"
+      name: "PHP"
+    - key: "python"
+      name: "Python"
+    - key: "javascript"
+      name: "Fetch"
+    - key: "js"
+      name: "Axios"
+
+languages:
+  en:
+    languageName: "English"
+    weight: 2
+    title: "FundedYouth API Docs"
+    params:
+      # Left sidebar footer items. Use HTML or Markdown.
+      toc_footers:
+        - 'Approved by <a href="https://fundedyouth.org">FundedYouth.org</a>'
