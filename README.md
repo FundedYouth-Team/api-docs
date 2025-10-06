@@ -3,7 +3,7 @@
 This site is using `Hugo SSG` with a three-column theme designd for API documenation.
 
 <div>
-<img src="./readme-media/api-docs-logo.png" style="background-color: #254e70; width: 300px;" />
+<img src="./readme-media/api-docs-logo.png" style="background-color: #254e70;" />
 </div>
 
 ## Location
